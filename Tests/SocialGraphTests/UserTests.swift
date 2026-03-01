@@ -34,7 +34,7 @@ struct Test {
             try mario.addFriend(username: "mario")
         }
     }
-   
+
     @Test("Users cannot add the same friend twice")
     func duplicateFriend() async throws {
         var mario = User(username: "mario", isVisible: true, friends: ["alice"])
