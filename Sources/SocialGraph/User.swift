@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  User.swift
 //  SocialGraph
 //
 //  Created by Mario Hernandez on 3/1/26.
