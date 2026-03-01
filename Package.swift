@@ -1,11 +1,20 @@
-// swift-tools-version: 6.2
+// swift-tools-version: 6.1.0
 import PackageDescription
 
 let package = Package(
     name: "SocialGraph",
+    platforms: [
+        .macOS(.v14)
+    ],
     products: [
-        .library(name: "SocialGraph", targets: ["SocialGraph"]),
-        .executable(name: "SocialGraphServer", targets: ["SocialGraphServer"]),
+        .library(
+            name: "SocialGraph",
+            targets: ["SocialGraph"]
+        ),
+        .executable(
+            name: "SocialGraphServer",
+            targets: ["SocialGraphServer"]
+        ),
     ],
     dependencies: [
         .package(
