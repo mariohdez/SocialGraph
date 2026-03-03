@@ -6,8 +6,12 @@
 //
 
 /// An in-memory store for the users of the service.
-public class UserStore {
-    var allUsers: [String: User] = [:]
+public actor UserStore {
+    var allUsers: [String: User]
+
+    public init(allUsers: [String: User] = [:]) {
+        self.allUsers = allUsers
+    }
 }
 
 extension UserStore {
