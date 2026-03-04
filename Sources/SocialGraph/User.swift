@@ -6,7 +6,7 @@
 //
 
 /// Represents a user in the social graph.
-public struct User: Equatable, Hashable {
+public struct User: Equatable, Hashable, Sendable {
     /// The user's username, which must be unique in the service.
     public let username: String
 
