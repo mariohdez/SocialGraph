@@ -42,4 +42,18 @@ struct Test {
             try mario.addFriend(username: "alice")
         }
     }
+    
+    @Test("Looking up a non-existent or invisible user throws an error")
+    func userNotFound() async throws {
+        let store = UserStore(allUsers: [
+            "mario": User(username: "mario", isVisible: true, friends: []),
+            "ghost": User(username: "ghost", isVisible: false, friends: [])
+        ])
+        await #expect(throws: SocialError.userNotFound) {
+            try await store.user(for: "luigi")
+        }
+        await #expect(throws: SocialError.userNotFound) {
+            try await store.user(for: "ghost")
+        }
+    }
 }
